@@ -1,0 +1,27 @@
+<div class="container" *ngIf="!enviado; else final">
+  <h2>Cuestionario</h2>
+
+  <form (ngSubmit)="enviar()">
+    <div *ngFor="let pregunta of preguntas; let i = index" class="pregunta">
+      <p>{{ i + 1 }}. {{ pregunta }}</p>
+      <div>
+        <label *ngFor="let valor of [1,2,3,4,5]">
+          <input type="radio"
+                 name="pregunta{{i}}"
+                 [value]="valor"
+                 [checked]="respuestas[i] === valor"
+                 (change)="cambiarRespuesta(i, valor)">
+          {{ valor }}
+        </label>
+      </div>
+    </div>
+
+    <button type="submit">Enviar evaluación</button>
+  </form>
+</div>
+
+<ng-template #final>
+  <h2>¡Gracias por completar la evaluación!</h2>
+  <p>{{ mensajeFinal }}</p>
+</ng-template>
+

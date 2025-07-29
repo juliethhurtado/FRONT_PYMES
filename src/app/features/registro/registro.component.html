@@ -1,0 +1,83 @@
+<div class="container" *ngIf="!enviado; else gracias">
+  <h2>Registro de Empresa</h2>
+
+  <form [formGroup]="empresaForm" (ngSubmit)="onSubmit()">
+    <div class="campo">
+      <label>Nombre de la empresa</label>
+      <input type="text" formControlName="nombreEmpresa" />
+    </div>
+
+    <div class="campo">
+      <label>Responsable</label>
+      <input type="text" formControlName="responsable" />
+    </div>
+
+    <div class="campo">
+      <label>Cargo</label>
+      <input type="text" formControlName="cargo" />
+    </div>
+
+    <div class="campo">
+      <label>Correo electrónico</label>
+      <input type="email" formControlName="correo" />
+    </div>
+
+    <div class="campo">
+      <label>Edad</label>
+      <input type="number" formControlName="edad" />
+    </div>
+
+    <div class="campo">
+      <label>Género</label>
+      <select formControlName="genero">
+        <option value="">Seleccione</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label>Ciudad</label>
+      <input type="text" formControlName="ciudad" />
+    </div>
+
+    <div class="campo">
+      <label>Departamento</label>
+      <input type="text" formControlName="departamento" />
+    </div>
+
+    <div class="campo">
+      <label>Número de empleados</label>
+      <input type="number" formControlName="numeroEmpleados" />
+    </div>
+
+    <div class="campo">
+      <label>Años de experiencia del responsable</label>
+      <input type="number" formControlName="aniosExperiencia" />
+    </div>
+
+    <h3>Cuestionario</h3>
+    <div *ngFor="let pregunta of preguntas; let i = index" class="pregunta">
+      <p>{{ i + 1 }}. {{ pregunta }}</p>
+      <div>
+        <label *ngFor="let valor of [1, 2, 3, 4, 5]">
+          <input
+            type="radio"
+            name="pregunta{{ i }}"
+            [value]="valor"
+            [checked]="empresaForm.value.respuestas[i] === valor"
+            (change)="cambiarRespuesta(i, valor)" />
+          {{ valor }}
+        </label>
+      </div>
+    </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+<ng-template #gracias>
+  <h2>¡Gracias por completar la evaluación!</h2>
+  <p>{{ mensajeFinal }}</p>
+</ng-template>

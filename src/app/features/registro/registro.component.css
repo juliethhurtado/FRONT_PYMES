@@ -1,17 +1,32 @@
-.container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
+.background {
+  background: linear-gradient(to right, #eef6f9, #dff1f6);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 20px;
 }
 
-.full-width {
+.container-formulario {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   width: 100%;
+  max-width: 1000px;
+}
+
+.titulo-principal {
+  font-size: 32px;
+  color: #2c3e50;
   margin-bottom: 20px;
 }
 
-.pregunta {
-  margin: 20px 0;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+.intro-text {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 30px;
+  text-align: justify;
+  line-height: 1.6;
 }
+

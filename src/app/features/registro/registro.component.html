@@ -1,83 +1,212 @@
-<div class="container" *ngIf="!enviado; else gracias">
-  <h2>Registro de Empresa</h2>
+<div class="background">
+  <div class="container-formulario">
 
-  <form [formGroup]="empresaForm" (ngSubmit)="onSubmit()">
-    <div class="campo">
-      <label>Nombre de la empresa</label>
-      <input type="text" formControlName="nombreEmpresa" />
+<!-- Introducción -->
+<div class="text-center mb-4">
+  <h1 class="titulo-principal text-center">TECNOLOGÍA PYMES</h1>
+
+  <img src="assets/images/pymes.jpg" alt="Logo PYMES" class="img-fluid my-3" style="max-height: 200px;">
+</div>
+<!-- MINI MANUAL DE USUARIO: solo se muestra en el paso 1 -->
+<div *ngIf="pasoActual === 1" class="card p-4 mb-4">
+  <h4 class="text-center mb-4">Herramienta de Evaluación de Madurez Tecnológica en PYMEs</h4>
+
+  <div class="mb-3">
+    <h5>🔹 Paso 1. Registro Inicial</h5>
+    <p>Completa el formulario con tus datos básicos: Información personal y laboral, detalles de la empresa, y aceptación del uso de datos con fines académicos. <strong>Tu información será tratada con confidencialidad.</strong></p>
+  </div>
+
+  <div class="mb-3">
+    <h5>🔹 Paso 2. Introducción al Modelo</h5>
+    <p>Conoce el Modelo de Madurez para la Adopción de Tecnologías 4.0 validado por expertos, que te permite identificar el estado tecnológico de tu empresa.</p>
+  </div>
+
+  <div class="mb-3">
+    <h5>🔹 Paso 3. Cuestionario de Evaluación</h5>
+    <p>Responde 22 preguntas en escala Likert (1 a 5) agrupadas en 5 dimensiones:</p>
+    <ul>
+      <li>Estrategia y liderazgo digital</li>
+      <li>Tecnologías clave</li>
+      <li>Capital humano</li>
+      <li>Gestión del conocimiento</li>
+      <li>Cultura organizacional</li>
+    </ul>
+    <p>Escala:</p>
+    <ul>
+      <li>1 = No se aplica</li>
+      <li>2 = Se está explorando</li>
+      <li>3 = Se aplica parcialmente</li>
+      <li>4 = Se aplica con frecuencia</li>
+      <li>5 = Se aplica completamente</li>
+    </ul>
+  </div>
+
+  <div class="mb-3">
+    <h5>🔹 Paso 4. Resultados y Recomendaciones</h5>
+    <p>Recibirás tu porcentaje de madurez, nivel alcanzado y un mensaje personalizado con recomendaciones.</p>
+    <table class="table table-bordered">
+      <thead class="table-light">
+        <tr>
+          <th>Nivel</th>
+          <th>Porcentaje</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>0%  – 20%</td><td>Inicial</td></tr>
+        <tr><td>2</td><td>21% – 40%</td><td>Exploratorio</td></tr>
+        <tr><td>3</td><td>41% – 60%</td><td>En transición</td></tr>
+        <tr><td>4</td><td>61% – 80%</td><td>Integrado</td></tr>
+        <tr><td>5</td><td>81% – 100%</td><td>Avanzado / Transformador</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mb-3">
+    <h5>🔹 Paso 5. Compartir resultado</h5>
+    <p>Al finalizar, tu resultado será enviado por correo electrónico al email registrado.</p>
+  </div>
+
+  <div class="mb-3">
+    <h5> Panel Global (opcional)</h5>
+    <p>Los administradores podrán visualizar estadísticas globales y gráficas de resultados a nivel agregado.</p>
+  </div>
+
+  <p class="text-muted text-center mt-4"><em>Completa el cuestionario con sinceridad para obtener un diagnóstico útil y recomendaciones personalizadas.</em></p>
+</div>
+
+
+    <!-- PASO 1: Registro -->
+  <h1 *ngIf="pasoActual === 1" class="titulo-principal text-center">REGISTRO DE EMPRESA</h1>
+    <div *ngIf="pasoActual === 1">
+      <form [formGroup]="empresaForm" (ngSubmit)="continuarCuestionario()" class="card p-4 shadow">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Nombre de la empresa</label>
+            <input class="form-control" formControlName="nombreEmpresa">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Responsable</label>
+            <input class="form-control" formControlName="responsable">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Cargo</label>
+            <input class="form-control" formControlName="cargo">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Correo</label>
+            <input type="email" class="form-control" formControlName="correo">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Nombre del participante</label>
+            <input class="form-control" formControlName="nombreParticipante">
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label class="form-label">Edad</label>
+            <input type="number" class="form-control" formControlName="edad">
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label class="form-label">Género</label>
+            <select class="form-select" formControlName="genero">
+              <option value="">Seleccione</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Ciudad</label>
+            <input class="form-control" formControlName="ciudad">
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label class="form-label">Número de empleados</label>
+            <input type="number" class="form-control" formControlName="numEmpleados">
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label class="form-label">Años de experiencia</label>
+            <input type="number" class="form-control" formControlName="experiencia">
+          </div>
+        </div>
+
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" formControlName="aceptoParticipar" id="acepto">
+          <label class="form-check-label" for="acepto">Acepto participar</label>
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-primary px-4" type="submit">Continuar con el cuestionario</button>
+        </div>
+      </form>
     </div>
 
-    <div class="campo">
-      <label>Responsable</label>
-      <input type="text" formControlName="responsable" />
+    <!-- PASO 2: Cuestionario -->
+    <div *ngIf="pasoActual === 2 && !mostrarResultado">
+      <h2 class="mb-4 text-center">Cuestionario de Evaluación</h2>
+
+      <form [formGroup]="cuestionarioForm" (ngSubmit)="enviarTodo()" class="card p-4 shadow">
+        <div formArrayName="respuestas">
+          <div *ngFor="let pregunta of preguntas; let i = index" class="mb-4">
+            <label class="form-label d-block">{{ i + 1 }}. {{ pregunta }}</label>
+            <div class="d-flex gap-3">
+              <div *ngFor="let valor of [1, 2, 3, 4, 5]">
+                <input
+                  type="radio"
+                  [value]="valor"
+                  [formControl]="getControl(i)"
+                  [id]="'pregunta_' + i + '_' + valor"
+                  name="pregunta_{{ i }}"
+                  class="form-check-input me-1"
+                />
+                <label class="form-check-label me-2" [for]="'pregunta_' + i + '_' + valor">
+                  {{ valor }}
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-success mt-3" type="submit">Enviar respuestas</button>
+        </div>
+      </form>
     </div>
 
-    <div class="campo">
-      <label>Cargo</label>
-      <input type="text" formControlName="cargo" />
-    </div>
+    <!-- PASO 3: Resultados -->
+    <div *ngIf="mostrarResultado">
+      <h2 class="text-center text-success mt-5"> Nivel de Madurez Tecnológica</h2>
+      <p class="text-center">{{ nivelMensaje }}</p>
 
-    <div class="campo">
-      <label>Correo electrónico</label>
-      <input type="email" formControlName="correo" />
-    </div>
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <canvas baseChart
+                  [data]="barChartData"
+                  type="bar"
+                  [options]="barChartOptions"
+                  class="mb-4">
+          </canvas>
+        </div>
+        <div class="col-md-6">
+          <canvas baseChart
+                  [data]="pieChartData"
+                  type="pie">
+          </canvas>
+        </div>
+      </div>
 
-    <div class="campo">
-      <label>Edad</label>
-      <input type="number" formControlName="edad" />
-    </div>
-
-    <div class="campo">
-      <label>Género</label>
-      <select formControlName="genero">
-        <option value="">Seleccione</option>
-        <option value="Femenino">Femenino</option>
-        <option value="Masculino">Masculino</option>
-        <option value="Otro">Otro</option>
-      </select>
-    </div>
-
-    <div class="campo">
-      <label>Ciudad</label>
-      <input type="text" formControlName="ciudad" />
-    </div>
-
-    <div class="campo">
-      <label>Departamento</label>
-      <input type="text" formControlName="departamento" />
-    </div>
-
-    <div class="campo">
-      <label>Número de empleados</label>
-      <input type="number" formControlName="numeroEmpleados" />
-    </div>
-
-    <div class="campo">
-      <label>Años de experiencia del responsable</label>
-      <input type="number" formControlName="aniosExperiencia" />
-    </div>
-
-    <h3>Cuestionario</h3>
-    <div *ngFor="let pregunta of preguntas; let i = index" class="pregunta">
-      <p>{{ i + 1 }}. {{ pregunta }}</p>
-      <div>
-        <label *ngFor="let valor of [1, 2, 3, 4, 5]">
-          <input
-            type="radio"
-            name="pregunta{{ i }}"
-            [value]="valor"
-            [checked]="empresaForm.value.respuestas[i] === valor"
-            (change)="cambiarRespuesta(i, valor)" />
-          {{ valor }}
-        </label>
+      <div class="text-center mt-3">
+        <button class="btn btn-primary" (click)="enviarResultadoPorCorreo()">Reenviar resultado al correo</button>
+        <button class="btn btn-outline-secondary ms-2" (click)="reiniciar()">Volver a empezar</button>
       </div>
     </div>
 
-    <button type="submit">Enviar</button>
-  </form>
+  </div>
 </div>
-
-<ng-template #gracias>
-  <h2>¡Gracias por completar la evaluación!</h2>
-  <p>{{ mensajeFinal }}</p>
-</ng-template>

@@ -1,0 +1,39 @@
+<h2>Registro de Empresa</h2>
+<form (ngSubmit)="registrarEmpresa()">
+  <label>Nombre Empresa:</label>
+  <input [(ngModel)]="empresa.nombreEmpresa" name="nombreEmpresa" required><br>
+
+  <label>Responsable:</label>
+  <input [(ngModel)]="empresa.responsable" name="responsable" required><br>
+
+  <label>Cargo:</label>
+  <input [(ngModel)]="empresa.cargo" name="cargo" required><br>
+
+  <label>Correo:</label>
+  <input [(ngModel)]="empresa.correo" name="correo" required type="email"><br>
+
+  <label>Edad:</label>
+  <input [(ngModel)]="empresa.edad" name="edad" required type="number"><br>
+
+  <label>Género:</label>
+  <select [(ngModel)]="empresa.genero" name="genero" required>
+    <option value="Masculino">Masculino</option> 
+    <option value="Femenino">Femenino</option>
+    <option value="Otro">Otro</option>
+  </select><br>
+
+  <label>Ciudad:</label>
+  <input [(ngModel)]="empresa.ciudad" name="ciudad" required><br>
+
+  <label>Departamento:</label>
+  <input [(ngModel)]="empresa.departamento" name="departamento" required><br>
+
+  <label>Número de Empleados:</label>
+  <input [(ngModel)]="empresa.numeroEmpleados" name="numeroEmpleados" required type="number"><br>
+
+  <label>Años de Experiencia:</label>
+  <input [(ngModel)]="empresa.añosExperiencia" name="añosExperiencia" required type="number"><br>
+
+  <button type="submit">Registrar</button>
+</form>
+

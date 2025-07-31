@@ -3,82 +3,89 @@
 
 <!-- Introducción -->
 <div class="text-center mb-4">
-  <h1 class="titulo-principal text-center">TECNOLOGÍA PYMES</h1>
-
+  <h1 class="titulo-sade borde-skyblue">SADE</h1>
+  <h5 style="font-size: 1.25rem; font-weight: 700; color: #000;">Sistema de Autoevaluación Digital para Empresas</h5>
   <img src="assets/images/pymes.jpg" alt="Logo PYMES" class="img-fluid my-3" style="max-height: 200px;">
 </div>
-<!-- MINI MANUAL DE USUARIO: solo se muestra en el paso 1 -->
-<div *ngIf="pasoActual === 1" class="card p-4 mb-4">
-  <h4 class="text-center mb-4">Herramienta de Evaluación de Madurez Tecnológica en PYMEs</h4>
 
-  <div class="mb-3">
-    <h5>🔹 Paso 1. Registro Inicial</h5>
-    <p>Completa el formulario con tus datos básicos: Información personal y laboral, detalles de la empresa, y aceptación del uso de datos con fines académicos. <strong>Tu información será tratada con confidencialidad.</strong></p>
-  </div>
 
-  <div class="mb-3">
-    <h5>🔹 Paso 2. Introducción al Modelo</h5>
-    <p>Conoce el Modelo de Madurez para la Adopción de Tecnologías 4.0 validado por expertos, que te permite identificar el estado tecnológico de tu empresa.</p>
-  </div>
+    <!-- MINI MANUAL DE USUARIO -->
+    <div *ngIf="mostrarManual" class="card p-4 mb-4">
+      <h4 class="text-center mb-4">Herramienta de Evaluación de Madurez Tecnológica en PYMEs</h4>
 
-  <div class="mb-3">
-    <h5>🔹 Paso 3. Cuestionario de Evaluación</h5>
-    <p>Responde 22 preguntas en escala Likert (1 a 5) agrupadas en 5 dimensiones:</p>
-    <ul>
-      <li>Estrategia y liderazgo digital</li>
-      <li>Tecnologías clave</li>
-      <li>Capital humano</li>
-      <li>Gestión del conocimiento</li>
-      <li>Cultura organizacional</li>
-    </ul>
-    <p>Escala:</p>
-    <ul>
-      <li>1 = No se aplica</li>
-      <li>2 = Se está explorando</li>
-      <li>3 = Se aplica parcialmente</li>
-      <li>4 = Se aplica con frecuencia</li>
-      <li>5 = Se aplica completamente</li>
-    </ul>
-  </div>
+      <div class="mb-3">
+        <h5>🔹 Paso 1. Registro Inicial</h5>
+        <p>Completa el formulario con tus datos básicos: Información personal y laboral, detalles de la empresa, y aceptación del uso de datos con fines académicos. <strong>Tu información será tratada con confidencialidad.</strong></p>
+      </div>
 
-  <div class="mb-3">
-    <h5>🔹 Paso 4. Resultados y Recomendaciones</h5>
-    <p>Recibirás tu porcentaje de madurez, nivel alcanzado y un mensaje personalizado con recomendaciones.</p>
-    <table class="table table-bordered">
-      <thead class="table-light">
-        <tr>
-          <th>Nivel</th>
-          <th>Porcentaje</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>0%  – 20%</td><td>Inicial</td></tr>
-        <tr><td>2</td><td>21% – 40%</td><td>Exploratorio</td></tr>
-        <tr><td>3</td><td>41% – 60%</td><td>En transición</td></tr>
-        <tr><td>4</td><td>61% – 80%</td><td>Integrado</td></tr>
-        <tr><td>5</td><td>81% – 100%</td><td>Avanzado / Transformador</td></tr>
-      </tbody>
-    </table>
-  </div>
+      <div class="mb-3">
+        <h5>🔹 Paso 2. Introducción al Modelo</h5>
+        <p>Conoce el Modelo de Madurez para la Adopción de Tecnologías 4.0 validado por expertos, que te permite identificar el estado tecnológico de tu empresa.</p>
+      </div>
 
-  <div class="mb-3">
-    <h5>🔹 Paso 5. Compartir resultado</h5>
-    <p>Al finalizar, tu resultado será enviado por correo electrónico al email registrado.</p>
-  </div>
+      <div class="mb-3">
+        <h5>🔹 Paso 3. Cuestionario de Evaluación</h5>
+        <p>Responde 22 preguntas en escala Likert (1 a 5) agrupadas en 5 dimensiones:</p>
+        <ul>
+          <li>Estrategia y liderazgo digital</li>
+          <li>Tecnologías clave</li>
+          <li>Capital humano</li>
+          <li>Gestión del conocimiento</li>
+          <li>Cultura organizacional</li>
+        </ul>
+        <p>Escala:</p>
+        <ul>
+          <li>1 = No se aplica</li>
+          <li>2 = Se está explorando</li>
+          <li>3 = Se aplica parcialmente</li>
+          <li>4 = Se aplica con frecuencia</li>
+          <li>5 = Se aplica completamente</li>
+        </ul>
+      </div>
 
-  <div class="mb-3">
-    <h5> Panel Global (opcional)</h5>
-    <p>Los administradores podrán visualizar estadísticas globales y gráficas de resultados a nivel agregado.</p>
-  </div>
+      <div class="mb-3">
+        <h5>🔹 Paso 4. Resultados y Recomendaciones</h5>
+        <p>Recibirás tu porcentaje de madurez, nivel alcanzado y un mensaje personalizado con recomendaciones.</p>
+        <table class="table table-bordered">
+          <thead class="table-light">
+            <tr>
+              <th>Nivel</th>
+              <th>Porcentaje</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>0% – 20%</td><td>Inicial</td></tr>
+            <tr><td>2</td><td>21% – 40%</td><td>Exploratorio</td></tr>
+            <tr><td>3</td><td>41% – 60%</td><td>En transición</td></tr>
+            <tr><td>4</td><td>61% – 80%</td><td>Integrado</td></tr>
+            <tr><td>5</td><td>81% – 100%</td><td>Avanzado / Transformador</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-  <p class="text-muted text-center mt-4"><em>Completa el cuestionario con sinceridad para obtener un diagnóstico útil y recomendaciones personalizadas.</em></p>
-</div>
+      <div class="mb-3">
+        <h5>🔹 Paso 5. Compartir resultado</h5>
+        <p>Al finalizar, tu resultado será enviado por correo electrónico al email registrado.</p>
+      </div>
 
+      <div class="mb-3">
+        <h5>Panel Global (opcional)</h5>
+        <p>Los administradores podrán visualizar estadísticas globales y fichas de resultados a nivel agregado.</p>
+      </div>
+
+      <p class="text-muted text-center mt-4">
+        <em>Completa el cuestionario con sinceridad para obtener un diagnóstico útil y recomendaciones personalizadas.</em>
+      </p>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-primary btn-lg px-5" (click)="iniciarRegistro()">Iniciar</button>
+      </div>
+    </div>
 
     <!-- PASO 1: Registro -->
-  <h1 *ngIf="pasoActual === 1" class="titulo-principal text-center">REGISTRO DE EMPRESA</h1>
-    <div *ngIf="pasoActual === 1">
+    <div *ngIf="!mostrarManual && pasoActual === 1">
+      <h1 class="titulo-principal text-center">REGISTRO DE EMPRESA</h1>
       <form [formGroup]="empresaForm" (ngSubmit)="continuarCuestionario()" class="card p-4 shadow">
         <div class="row">
           <div class="col-md-6 mb-3">
@@ -148,65 +155,87 @@
       </form>
     </div>
 
-    <!-- PASO 2: Cuestionario -->
-    <div *ngIf="pasoActual === 2 && !mostrarResultado">
-      <h2 class="mb-4 text-center">Cuestionario de Evaluación</h2>
+    <!-- PASO 2: Cuestionario con bloques de 4 preguntas -->
+<div *ngIf="pasoActual === 2 && !mostrarResultado">
+  <h2 class="mb-4 text-center">Cuestionario de Evaluación</h2>
 
-      <form [formGroup]="cuestionarioForm" (ngSubmit)="enviarTodo()" class="card p-4 shadow">
-        <div formArrayName="respuestas">
-          <div *ngFor="let pregunta of preguntas; let i = index" class="mb-4">
-            <label class="form-label d-block">{{ i + 1 }}. {{ pregunta }}</label>
-            <div class="d-flex gap-3">
-              <div *ngFor="let valor of [1, 2, 3, 4, 5]">
-                <input
-                  type="radio"
-                  [value]="valor"
-                  [formControl]="getControl(i)"
-                  [id]="'pregunta_' + i + '_' + valor"
-                  name="pregunta_{{ i }}"
-                  class="form-check-input me-1"
-                />
-                <label class="form-check-label me-2" [for]="'pregunta_' + i + '_' + valor">
-                  {{ valor }}
-                </label>
-              </div>
-            </div>
-          </div>
+  <form [formGroup]="cuestionarioForm" (ngSubmit)="finalizarCuestionario()" class="card p-4 shadow">
+    <div formArrayName="respuestas">
+      <div *ngFor="let i of preguntasPorBloque()" class="mb-4">
+        <label class="form-label d-block">{{ i + 1 }}. {{ preguntas[i] }}</label>
+        <div class="d-flex gap-3">
+          <ng-container *ngFor="let valor of [1, 2, 3, 4, 5]">
+            <input
+              type="radio"
+              [value]="valor"
+              [formControl]="getControl(i)"
+              [id]="'preg_' + i + '_' + valor"
+              name="pregunta_{{ i }}"
+              class="form-check-input me-1"
+            />
+            <label class="form-check-label me-2" [for]="'preg_' + i + '_' + valor">
+              {{ valor }}
+            </label>
+          </ng-container>
         </div>
-
-        <div class="text-center">
-          <button class="btn btn-success mt-3" type="submit">Enviar respuestas</button>
-        </div>
-      </form>
+      </div>
     </div>
+
+    <div class="text-center mt-4">
+      <button type="button" class="btn btn-outline-secondary me-2"
+              (click)="anteriorBloque()" [disabled]="bloqueActual === 0">
+        Anterior
+      </button>
+
+      <button *ngIf="bloqueActual < totalBloques - 1"
+              type="button"
+              class="btn btn-primary"
+              (click)="siguienteBloque()">
+        Siguiente
+      </button>
+
+      <button *ngIf="bloqueActual === totalBloques - 1"
+              type="submit"
+              class="btn btn-success">
+        Finalizar Cuestionario
+      </button>
+    </div>
+  </form>
+</div>
+
 
     <!-- PASO 3: Resultados -->
-    <div *ngIf="mostrarResultado">
-      <h2 class="text-center text-success mt-5"> Nivel de Madurez Tecnológica</h2>
-      <p class="text-center">{{ nivelMensaje }}</p>
+<div *ngIf="mostrarResultado">
+  <h2 class="text-center mb-4">Resultado del Diagnóstico de Transformación Digital</h2>
 
-      <div class="row justify-content-center">
-        <div class="col-md-10">
-          <canvas baseChart
-                  [data]="barChartData"
-                  type="bar"
-                  [options]="barChartOptions"
-                  class="mb-4">
-          </canvas>
-        </div>
-        <div class="col-md-6">
-          <canvas baseChart
-                  [data]="pieChartData"
-                  type="pie">
-          </canvas>
-        </div>
-      </div>
+ <!-- Nivel y mensaje -->
+<div class="card p-4 shadow my-4">
+  <h4 class="text-center text-primary">Nivel {{ nivelMadurez }} - {{ nivelNombre }}</h4>
+  <p class="text-center mb-0">{{ nivelMensajeDetalle }}</p>
+</div>
 
-      <div class="text-center mt-3">
-        <button class="btn btn-primary" (click)="enviarResultadoPorCorreo()">Reenviar resultado al correo</button>
-        <button class="btn btn-outline-secondary ms-2" (click)="reiniciar()">Volver a empezar</button>
-      </div>
+
+  <!-- Gráficos -->
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <canvas baseChart
+              [data]="barChartData"
+              type="bar"
+              [options]="barChartOptions"
+              class="mb-4">
+      </canvas>
     </div>
+    <div class="col-md-6">
+      <canvas baseChart
+              [data]="pieChartData"
+              type="pie">
+      </canvas>
+    </div>
+  </div>
 
+  <!-- Botones -->
+  <div class="text-center mt-3">
+    <button class="btn btn-outline-secondary ms-2" (click)="reiniciar()">Volver a empezar</button>
   </div>
 </div>
+

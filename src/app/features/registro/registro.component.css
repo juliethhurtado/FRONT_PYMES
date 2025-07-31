@@ -1,5 +1,5 @@
 .background {
-  background: linear-gradient(to right, #eef6f9, #dff1f6);
+ background: linear-gradient(to right, #cceeff, #086c9e); 
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -29,4 +29,13 @@
   text-align: justify;
   line-height: 1.6;
 }
+.titulo-sade {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white; /* Letras blancas */
+  -webkit-text-stroke: 1px #086c9e; /* Contorno azul oscuro */
+  background-color: transparent; /* Sin fondo */
+}
+
+
 
